@@ -49,11 +49,10 @@ Proje 3. Normal Form (3NF) kurallarına uygun tasarlanmıştır. Ana tablolar ş
 
 Projeyi yerel makinenizde çalıştırmak için aşağıdaki adımları izleyin.
 
-### 1. Veritabanını Oluşturun
-Proje klasöründe bulunan veya aşağıda verilen SQL kodlarını MySQL Workbench veya phpMyAdmin üzerinden çalıştırarak veritabanını oluşturun.
-
-* Veritabanı Adı: `Diyabet_Takip`
-* Karakter Seti: `utf8mb4`
+### 1. Veritabanı Kurulumu
+Proje ana dizininde bulunan **`diyabet_takip.sql`** dosyasını MySQL veritabanınıza import edin.
+* Bu dosya gerekli veritabanını (`Diyabet_Takip`), tüm tabloları ve ilişkileri otomatik olarak oluşturacaktır.
+* **Karakter Seti:** `utf8mb4` olduğundan emin olun.
 
 ### 2. Bağlantı Ayarları
 C# projesini açın ve veritabanı bağlantı fonksiyonunun olduğu kısımdaki (genellikle `Database` sınıfı veya `App.config` dosyasında) bağlantı cümlesini (connection string) kendi yerel ayarlarınıza göre güncelleyin:
@@ -61,7 +60,8 @@ C# projesini açın ve veritabanı bağlantı fonksiyonunun olduğu kısımdaki 
 ```csharp
 Server=localhost; Database=Diyabet_Takip; Uid=root; Pwd=sifreniz;
 ```
-3. Projeyi Başlatın
+
+### 3. Projeyi Başlatın
 Visual Studio üzerinden projeyi derleyin ve çalıştırın.
 
-İlk girişte veritabanında kayıtlı bir doktor veya hasta kullanıcı bilgisi ile giriş yapmanız gerekebilir. (SQL dosyasında örnek veri yoksa manuel ekleme yapınız).
+Sisteme giriş yapabilmek için veritabanında kayıtlı bir kullanıcı olması gerekir. Eğer SQL dosyasında örnek veri yoksa, veritabanına manuel olarak bir doktor/hasta kaydı ekleyerek giriş yapabilirsiniz.
